@@ -23,7 +23,9 @@ export const metadata: Metadata = {
   ],
 
   // Author information
-  authors: [{ name: "Aditya Shah", url: "https://yourwebsite.com" }],
+  authors: [
+    { name: "Aditya Shah", url: "next-portfolio-vert-seven.vercel.app" },
+  ],
   creator: "Aditya Shah",
   publisher: "Aditya Shah",
 
@@ -45,21 +47,21 @@ export const metadata: Metadata = {
 
   // Canonical URL (prevents duplicate content issues)
   alternates: {
-    canonical: "https://yourwebsite.com",
+    canonical: "next-portfolio-vert-seven.vercel.app",
   },
 
   // Open Graph (for social media sharing)
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://yourwebsite.com",
+    url: "next-portfolio-vert-seven.vercel.app",
     title: "Aditya Shah - Front-end Hobby Developer",
     description:
       "Front-end Hobby Developer specializing in Next.js, React, and modern web technologies.",
     siteName: "Aditya Shah Portfolio",
     images: [
       {
-        url: "https://yourwebsite.com/og-image.jpg",
+        url: "next-portfolio-vert-seven.vercel.app/favicon.png",
         width: 1200,
         height: 630,
         alt: "Aditya Shah - Front-end Hobby Developer",
@@ -74,7 +76,7 @@ export const metadata: Metadata = {
     description:
       "Front-end Hobby Developer specializing in Next.js, React, and modern web technologies.",
     creator: "@yourtwitterhandle",
-    images: ["https://yourwebsite.com/twitter-image.jpg"],
+    images: ["next-portfolio-vert-seven.vercel.app/favicon.png"],
   },
 
   // Icons and favicons - comment out until you add the actual files
@@ -168,7 +170,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Aditya Shah",
-              url: "https://yourwebsite.com",
+              url: "next-portfolio-vert-seven.vercel.app",
               jobTitle: "Front-end Hobby Developer",
               description:
                 "Front-end Hobby Developer specializing in Next.js, React, and modern web technologies",
