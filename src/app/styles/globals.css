@@ -1,0 +1,188 @@
+/* Reset default margin and padding to ensure consistent rendering across browsers */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Add this to your globals.css or page.module.css */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+}
+
+/* For webkit browsers (Chrome, Safari, Edge) */
+html {
+  scroll-snap-type: y proximity; /* Optional: adds snap points */
+}
+
+/* Custom smooth scrolling with CSS transforms */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Alternative approach using CSS scroll-timeline (newer browsers) */
+@supports (scroll-timeline: works) {
+  html {
+    scroll-timeline: --page-scroll block;
+    animation: smooth-scroll linear both;
+    animation-timeline: --page-scroll;
+  }
+}
+
+@keyframes smooth-scroll {
+  to {
+    scroll-behavior: smooth;
+  }
+}
+
+/* For better performance on older devices */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@font-face {
+  font-family: "Articulat";
+  src: url("./fonts/ArticulatCFNormal.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Base styles for the body element */
+body {
+  /* Set a modern system font stack for optimal text rendering */
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
+  font-family: "Articulat", Arial, sans-serif;
+  /* Set a comfortable line height for better readability */
+  line-height: 1.6;
+
+  /* Add smooth scrolling behavior for better user experience */
+  scroll-behavior: smooth;
+
+  /* Set a light background color */
+  background-color: #010101;
+
+  /* Set text color to a dark gray for better contrast */
+  color: #f1f1f1;
+
+  /* Add minimum height to ensure footer stays at bottom */
+  min-height: 100vh;
+
+  /* Prevent horizontal scrolling */
+  overflow-x: hidden;
+
+  /* Enable hardware acceleration for smoother animations */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Add some padding to prevent content from touching screen edges */
+  padding: 0 1rem;
+
+  /* Set maximum width for better readability on large screens */
+  /* max-width: 1500px; */
+
+  /* Center the content horizontally */
+  margin: 0 auto;
+  background-image: radial-gradient(
+      ellipse 400px 300px at 75% 80%,
+      #ff4757 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 350px 400px at 85% 70%,
+      #3742fa 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 300px 250px at 80% 95%,
+      #ff6b88 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 250px 350px at 70% 85%,
+      #8e44ad 0%,
+      transparent 100%
+    );
+  background-attachment: fixed;
+}
+
+/* Add to your page.module.css or globals.css */
+
+/* Enable smooth scrolling globally */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Enhance the main title */
+.main {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #3b82f6, #72668d);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+}
+
+/* Style the lorem sections */
+.lorem {
+  padding: 2rem;
+  margin: 1rem 0;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  .lorem {
+    padding: 1.5rem;
+    margin: 0.5rem;
+  }
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #000, #020202);
+  /* border-radius: 4px; */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #000, #020202);
+}
+
+::selection {
+  background: #fff;
+  color: black;
+}
+
+::-moz-selection {
+  background: #fff;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+}
