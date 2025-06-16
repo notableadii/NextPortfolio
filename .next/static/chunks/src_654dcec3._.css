@@ -2,7 +2,7 @@
 .page-module__3j-8fq__main {
   color: #333;
   height: 2em;
-  margin-top: 5em;
+  margin-top: 8em;
   font-size: 3em;
 }
 
@@ -21,7 +21,7 @@
   .page-module__3j-8fq__main {
     color: #f1f1f1;
     height: 2em;
-    margin-top: 4em;
+    margin-top: 6em;
     font-size: 3em;
   }
 
@@ -41,7 +41,7 @@
   .page-module__3j-8fq__main {
     color: #f1f1f1;
     height: 2em;
-    margin-top: 4em;
+    margin-top: 6em;
     font-size: 3em;
   }
 
@@ -61,7 +61,7 @@
   .page-module__3j-8fq__main {
     color: #f1f1f1;
     height: 2em;
-    margin-top: 4em;
+    margin-top: 6em;
     font-size: 2.5em;
   }
 
@@ -81,7 +81,7 @@
   .page-module__3j-8fq__main {
     color: #f1f1f1;
     height: 2em;
-    margin-top: 3em;
+    margin-top: 5em;
     font-size: 2.5em;
   }
 
@@ -101,7 +101,7 @@
   .page-module__3j-8fq__main {
     color: #f1f1f1;
     height: 2em;
-    margin-top: 3em;
+    margin-top: 5em;
     font-size: 2.5em;
   }
 
@@ -121,7 +121,7 @@
   .page-module__3j-8fq__main {
     color: #f1f1f1;
     height: 2em;
-    margin-top: 6em;
+    margin-top: 10.5em;
     font-size: 2em;
   }
 
@@ -143,7 +143,7 @@
     text-align: center;
     color: #f1f1f1;
     height: 2em;
-    margin-top: 5em;
+    margin-top: 8em;
     font-size: 1.9em;
     text-decoration: none;
   }
@@ -184,7 +184,7 @@
 }
 
 .page-module__3j-8fq__gradient_text {
-  background: linear-gradient(90deg, #62e19f, #62e19f, #62e19f, #62e19f) 0 0 / 300% 100%;
+  background: linear-gradient(90deg, #ff4757, #3742fa, #ff6b88, #8e44ad) 0 0 / 300% 100%;
   color: #0000;
   -webkit-text-fill-color: transparent;
   text-align: center;
@@ -415,9 +415,8 @@
   z-index: 1000;
   background: none;
   margin-top: 2em;
-  font-family: CallingCodeRegular, Arial, sans-serif;
   transition: all .3s;
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -439,10 +438,6 @@
   transition: color .3s;
 }
 
-.Navigation-module__eB08ka__logo:hover {
-  color: #62e19f;
-}
-
 .Navigation-module__eB08ka__logo a {
   color: inherit;
   text-decoration: none;
@@ -459,7 +454,7 @@
 .Navigation-module__eB08ka__navLink {
   color: #fff;
   padding: .5rem 0;
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: 400;
   text-decoration: none;
   transition: color .3s;
@@ -482,7 +477,7 @@
 }
 
 .Navigation-module__eB08ka__navLink:hover {
-  color: #62e19f;
+  color: #666;
 }
 
 @media (width <= 768px) {
@@ -490,8 +485,12 @@
     padding: 0 1rem;
   }
 
-  .Navigation-module__eB08ka__logo, .Navigation-module__eB08ka__navLink {
+  .Navigation-module__eB08ka__logo {
     font-size: 1.5rem;
+  }
+
+  .Navigation-module__eB08ka__navLink {
+    font-size: 1.2rem;
   }
 }
 
@@ -500,10 +499,273 @@
     padding: 0 1rem;
   }
 
-  .Navigation-module__eB08ka__logo, .Navigation-module__eB08ka__navLink {
+  .Navigation-module__eB08ka__logo {
     font-size: 1.3rem;
+  }
+
+  .Navigation-module__eB08ka__navLink {
+    font-size: 1rem;
   }
 }
 
 
-/*# sourceMappingURL=src_4a442d5d._.css.map*/
+/* [project]/src/components/TechStack.module.css [app-client] (css) */
+.TechStack-module__WlEV-q__techStackContainer {
+  min-height: 100vh;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.TechStack-module__WlEV-q__contentWrapper {
+  max-width: 1250px;
+  margin-left: 6em;
+  padding-top: 8em;
+}
+
+.TechStack-module__WlEV-q__title {
+  color: #f1f1f1;
+  opacity: 0;
+  margin-bottom: 3em;
+  font-size: 3em;
+  transition: all .8s cubic-bezier(.25, .46, .45, .94);
+  transform: translateX(-100px);
+}
+
+.TechStack-module__WlEV-q__title.TechStack-module__WlEV-q__visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.TechStack-module__WlEV-q__techList {
+  flex-direction: column;
+  gap: 2.5em;
+  display: flex;
+}
+
+.TechStack-module__WlEV-q__techItem {
+  color: #f1f1f1;
+  opacity: 0;
+  will-change: transform, opacity;
+  align-items: center;
+  gap: 1.5em;
+  font-size: 2.3em;
+  line-height: 1.5;
+  transition: all .6s cubic-bezier(.25, .46, .45, .94);
+  display: flex;
+  transform: translateX(-80px);
+}
+
+.TechStack-module__WlEV-q__techItem.TechStack-module__WlEV-q__visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.TechStack-module__WlEV-q__techIcon {
+  text-align: center;
+  filter: drop-shadow(0 2px 4px #0003);
+  min-width: 1.5em;
+  font-size: 1.2em;
+  display: inline-block;
+}
+
+.TechStack-module__WlEV-q__techName {
+  letter-spacing: .02em;
+  font-weight: 400;
+}
+
+.TechStack-module__WlEV-q__techItem:nth-child(odd) {
+  transform: translateX(-80px)translateY(10px);
+}
+
+.TechStack-module__WlEV-q__techItem:nth-child(2n) {
+  transform: translateX(-80px)translateY(-10px);
+}
+
+.TechStack-module__WlEV-q__techItem.TechStack-module__WlEV-q__visible:nth-child(odd), .TechStack-module__WlEV-q__techItem.TechStack-module__WlEV-q__visible:nth-child(2n) {
+  transform: translateX(0)translateY(0);
+}
+
+.TechStack-module__WlEV-q__techItem:hover {
+  transition: transform .3s;
+  transform: translateX(10px);
+}
+
+.TechStack-module__WlEV-q__techItem:hover .TechStack-module__WlEV-q__techIcon {
+  transition: transform .3s;
+  transform: scale(1.1);
+}
+
+@media (width <= 1600px) {
+  .TechStack-module__WlEV-q__contentWrapper {
+    margin-left: 1.5em;
+    padding-top: 6em;
+  }
+
+  .TechStack-module__WlEV-q__title {
+    margin-bottom: 2.5em;
+    font-size: 3em;
+  }
+
+  .TechStack-module__WlEV-q__techItem {
+    gap: 1.5em;
+    font-size: 2.3em;
+  }
+}
+
+@media (width <= 1414px) {
+  .TechStack-module__WlEV-q__contentWrapper {
+    margin-left: 1.5em;
+  }
+}
+
+@media (width <= 1300px) {
+  .TechStack-module__WlEV-q__title {
+    margin-bottom: 2em;
+    font-size: 2.5em;
+  }
+
+  .TechStack-module__WlEV-q__techItem {
+    gap: 1.2em;
+    font-size: 1.8em;
+  }
+
+  .TechStack-module__WlEV-q__contentWrapper {
+    margin-left: 1em;
+  }
+}
+
+@media (width <= 1046px) {
+  .TechStack-module__WlEV-q__title {
+    font-size: 2.5em;
+  }
+
+  .TechStack-module__WlEV-q__techItem {
+    font-size: 1.8em;
+  }
+
+  .TechStack-module__WlEV-q__contentWrapper {
+    margin-left: 1.5em;
+    padding-top: 5em;
+  }
+}
+
+@media (width <= 712px) {
+  .TechStack-module__WlEV-q__contentWrapper {
+    margin-left: 0;
+  }
+}
+
+@media (width <= 594px) {
+  .TechStack-module__WlEV-q__title {
+    text-align: center;
+    margin-bottom: 1.5em;
+    font-size: 2em;
+  }
+
+  .TechStack-module__WlEV-q__techItem {
+    justify-content: center;
+    gap: 1em;
+    font-size: 1.5em;
+  }
+
+  .TechStack-module__WlEV-q__contentWrapper {
+    text-align: center;
+    margin-left: 0;
+    padding-top: 10.5em;
+  }
+
+  .TechStack-module__WlEV-q__techList {
+    gap: 2em;
+  }
+}
+
+@media (width <= 450px) {
+  .TechStack-module__WlEV-q__title {
+    text-align: center;
+    font-size: 1.9em;
+  }
+
+  .TechStack-module__WlEV-q__techItem {
+    gap: .8em;
+    font-size: 1.2em;
+  }
+
+  .TechStack-module__WlEV-q__contentWrapper {
+    padding-top: 6em;
+  }
+
+  .TechStack-module__WlEV-q__techList {
+    gap: 1.5em;
+  }
+}
+
+@media (width <= 300px) {
+  .TechStack-module__WlEV-q__title {
+    font-size: 1.9em;
+  }
+
+  .TechStack-module__WlEV-q__techItem {
+    font-size: 1em;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .TechStack-module__WlEV-q__techItem {
+    transition: all .8s cubic-bezier(.165, .84, .44, 1);
+  }
+
+  .TechStack-module__WlEV-q__techItem:first-child {
+    transition-delay: .1s;
+  }
+
+  .TechStack-module__WlEV-q__techItem:nth-child(2) {
+    transition-delay: .2s;
+  }
+
+  .TechStack-module__WlEV-q__techItem:nth-child(3) {
+    transition-delay: .3s;
+  }
+
+  .TechStack-module__WlEV-q__techItem:nth-child(4) {
+    transition-delay: .4s;
+  }
+
+  .TechStack-module__WlEV-q__techItem:nth-child(5) {
+    transition-delay: .5s;
+  }
+
+  .TechStack-module__WlEV-q__techItem:nth-child(6) {
+    transition-delay: .6s;
+  }
+
+  .TechStack-module__WlEV-q__techItem:nth-child(7) {
+    transition-delay: .7s;
+  }
+
+  .TechStack-module__WlEV-q__techItem:nth-child(8) {
+    transition-delay: .8s;
+  }
+
+  .TechStack-module__WlEV-q__techItem:nth-child(9) {
+    transition-delay: .9s;
+  }
+
+  .TechStack-module__WlEV-q__techItem:nth-child(10) {
+    transition-delay: 1s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .TechStack-module__WlEV-q__techItem, .TechStack-module__WlEV-q__title {
+    transition: opacity .3s;
+    transform: none !important;
+  }
+
+  .TechStack-module__WlEV-q__techItem:hover {
+    transform: none;
+  }
+}
+
+
+/*# sourceMappingURL=src_654dcec3._.css.map*/

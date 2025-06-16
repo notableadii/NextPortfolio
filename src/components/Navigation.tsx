@@ -20,7 +20,7 @@ const Navigation = () => {
           <ul className={styles.navLinks}>
             <li>
               <Link href="mailto:work.adii01@gmail.com">
-                <span className={styles.navLink}>Contact</span>
+                <span className={styles.navLink}>contact.</span>
               </Link>
             </li>
           </ul>

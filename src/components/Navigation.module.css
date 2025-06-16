@@ -1,13 +1,14 @@
 /* Navigation Container */
 .navbar {
   margin-top: 2em;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   background: transparent;
   transition: all 0.3s ease;
+  font-family: "CallingCodeRegular", Arial, sans-serif;
 }
 
 .navContainer {
@@ -25,6 +26,10 @@
   font-size: 2rem;
   color: #fff;
   transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #62e19f;
 }
 
 .logo a {
@@ -45,7 +50,7 @@
   text-decoration: none;
   color: #fff;
   font-weight: 400;
-  font-size: 1.4rem;
+  font-size: 2rem;
   padding: 0.5rem 0;
   position: relative;
   transition: color 0.3s ease;
@@ -67,7 +72,7 @@
 }
 
 .navLink:hover {
-  color: #666;
+  color: #62e19f;
 }
 
 /* Responsive Design */
@@ -81,7 +86,7 @@
   }
 
   .navLink {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -95,6 +100,6 @@
   }
 
   .navLink {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 }

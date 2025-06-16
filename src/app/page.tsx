@@ -5,6 +5,7 @@ import styles from "./styles/page.module.css";
 import Link from "next/link";
 import MultilingualLoader from "../components/MultilingualLoader";
 import Navigation from "../components/Navigation";
+import TechStack from "../components/TechStack";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -37,7 +38,7 @@ export default function Home() {
         </div>
 
         {/* Scroll Down Icon */}
-        <div className={styles.scrollIcon}>
+        <div className={styles.scrollIcon} onClick={scrollDown}>
           <svg
             width="24"
             height="40"
@@ -89,6 +90,9 @@ export default function Home() {
           </svg>
         </div>
       </div>
+
+      {/* Tech Stack Section */}
+      <TechStack />
     </>
   );
 }
