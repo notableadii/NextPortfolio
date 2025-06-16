@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./styles/globals.css";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   // Basic SEO
@@ -162,37 +163,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Additional structured data - JSON-LD for rich snippets */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Aditya Shah",
-              url: "next-portfolio-vert-seven.vercel.app",
-              jobTitle: "Front-end Hobby Developer",
-              description:
-                "Front-end Hobby Developer specializing in Next.js, React, and modern web technologies",
-              image: "https://yourwebsite.com/profile-image.jpg",
-              sameAs: [
-                "https://linkedin.com/in/adityashahh",
-                "https://github.com/notableadii",
-                "https://twitter.com/TheMostRealAdii",
-                "https://instagram.com/ewww_adii",
-              ],
-              knowsAbout: [
-                "JavaScript",
-                "Python",
-                "React",
-                "Next.js",
-                "Node.js",
-                "Web Development",
-              ],
-            }),
-          }}
-        />
-
         {/* Preconnect to external domains for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -205,7 +175,10 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
       </head>
-      <body>{children}</body>
+      <body>
+        <JsonLd />
+        {children}
+      </body>
     </html>
   );
 }

@@ -136,7 +136,7 @@
     height: 2em;
     font-size: 2em;
     color: #f1f1f1;
-    margin-top: 5em;
+    margin-top: 10.5em;
   }
 
   .lorem {
@@ -252,3 +252,109 @@
   background: #3b82f6;
   color: white;
 }
+
+/*  */
+
+/* Add this to your page.module.css file */
+
+.scrollIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 3rem;
+  cursor: pointer;
+  color: #fff;
+  opacity: 0.7;
+  margin-left: -6em;
+  transition: all 0.3s ease;
+  animation: bounce 2s infinite;
+  margin-top: 14em;
+}
+
+.scrollIcon:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.mouseIcon {
+  width: 24px;
+  height: 40px;
+}
+
+.arrowIcon {
+  width: 20px;
+  height: 12px;
+}
+
+/* Scroll wheel animation */
+.wheelAnimation {
+  animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+}
+
+/* Bounce animation for the entire icon */
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scrollIcon {
+    margin-top: 2rem;
+  }
+
+  .mouseIcon {
+    width: 20px;
+    height: 32px;
+  }
+
+  .arrowIcon {
+    width: 16px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 594px) {
+  .scrollIcon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0rem;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.7;
+    margin-left: 0em;
+    transition: all 0.3s ease;
+    animation: bounce 2s infinite;
+    margin-top: 3em;
+  }
+}
+
+/*  */

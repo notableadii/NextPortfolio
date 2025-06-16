@@ -1,0 +1,332 @@
+/* [project]/src/app/styles/page.module.css [app-client] (css) */
+.page-module__3j-8fq__main {
+  color: #333;
+  height: 2em;
+  margin-top: 8em;
+  font-size: 3em;
+}
+
+.page-module__3j-8fq__lorem {
+  color: #f1f1f1;
+  max-width: 1250px;
+  font-size: 2.3em;
+  line-height: 1.5;
+}
+
+.page-module__3j-8fq__container_main {
+  margin-left: 6em;
+}
+
+@media (width <= 1600px) {
+  .page-module__3j-8fq__main {
+    color: #f1f1f1;
+    height: 2em;
+    margin-top: 6em;
+    font-size: 3em;
+  }
+
+  .page-module__3j-8fq__lorem {
+    color: #f1f1f1;
+    max-width: 1250px;
+    font-size: 2.3em;
+    line-height: 1.5;
+  }
+
+  .page-module__3j-8fq__container_main {
+    margin-left: 1.5em;
+  }
+}
+
+@media (width <= 1414px) {
+  .page-module__3j-8fq__main {
+    color: #f1f1f1;
+    height: 2em;
+    margin-top: 6em;
+    font-size: 3em;
+  }
+
+  .page-module__3j-8fq__lorem {
+    color: #f1f1f1;
+    max-width: 1250px;
+    font-size: 2.3em;
+    line-height: 1.5;
+  }
+
+  .page-module__3j-8fq__container_main {
+    margin-left: 1.5em;
+  }
+}
+
+@media (width <= 1300px) {
+  .page-module__3j-8fq__main {
+    color: #f1f1f1;
+    height: 2em;
+    margin-top: 6em;
+    font-size: 2.5em;
+  }
+
+  .page-module__3j-8fq__lorem {
+    color: #f1f1f1;
+    max-width: 1250px;
+    font-size: 1.8em;
+    line-height: 1.5;
+  }
+
+  .page-module__3j-8fq__container_main {
+    margin-left: 1em;
+  }
+}
+
+@media (width <= 1046px) {
+  .page-module__3j-8fq__main {
+    color: #f1f1f1;
+    height: 2em;
+    margin-top: 5em;
+    font-size: 2.5em;
+  }
+
+  .page-module__3j-8fq__lorem {
+    color: #f1f1f1;
+    max-width: 1250px;
+    font-size: 1.8em;
+    line-height: 1.5;
+  }
+
+  .page-module__3j-8fq__container_main {
+    margin-left: 1.5em;
+  }
+}
+
+@media (width <= 712px) {
+  .page-module__3j-8fq__main {
+    color: #f1f1f1;
+    height: 2em;
+    margin-top: 5em;
+    font-size: 2.5em;
+  }
+
+  .page-module__3j-8fq__lorem {
+    color: #f1f1f1;
+    max-width: 1250px;
+    font-size: 1.8em;
+    line-height: 1.5;
+  }
+
+  .page-module__3j-8fq__container_main {
+    margin-left: 0;
+  }
+}
+
+@media (width <= 594px) {
+  .page-module__3j-8fq__main {
+    color: #f1f1f1;
+    height: 2em;
+    margin-top: 10.5em;
+    font-size: 2em;
+  }
+
+  .page-module__3j-8fq__lorem {
+    color: #f1f1f1;
+    max-width: 1250px;
+    font-size: 1.5em;
+    line-height: 1.5;
+  }
+
+  .page-module__3j-8fq__container_main {
+    text-align: center;
+    margin-left: 0;
+  }
+}
+
+@media (width <= 450px) {
+  .page-module__3j-8fq__main {
+    text-align: center;
+    color: #f1f1f1;
+    height: 2em;
+    margin-top: 6em;
+    font-size: 1.9em;
+    text-decoration: none;
+  }
+
+  .page-module__3j-8fq__lorem {
+    color: #f1f1f1;
+    max-width: 2000px;
+    font-size: 1.2em;
+    line-height: 1.5;
+  }
+
+  .page-module__3j-8fq__container_main {
+    text-align: center;
+    margin-left: 0;
+  }
+}
+
+@media (width <= 300px) {
+  .page-module__3j-8fq__main {
+    color: #f1f1f1;
+    height: 2em;
+    margin-top: 6em;
+    font-size: 1.9em;
+    text-decoration: none;
+  }
+
+  .page-module__3j-8fq__lorem {
+    color: #f1f1f1;
+    max-width: 1250px;
+    font-size: 1vw;
+    line-height: 1.5;
+  }
+
+  .page-module__3j-8fq__container_main {
+    text-align: center;
+    margin-left: 0;
+  }
+}
+
+.page-module__3j-8fq__gradient_text {
+  background: linear-gradient(90deg, #ff4757, #3742fa, #ff6b88, #8e44ad) 0 0 / 300% 100%;
+  color: #0000;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 800;
+  line-height: 1.2;
+  animation: 8s infinite page-module__3j-8fq__gradient-move;
+  display: inline-block;
+}
+
+@keyframes page-module__3j-8fq__gradient-move {
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: 0%;
+  }
+}
+
+.page-module__3j-8fq__container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+}
+
+.page-module__3j-8fq__link {
+  color: #3b82f6;
+  border: 2px solid #3b82f6;
+  border-radius: .5rem;
+  padding: .5rem 1rem;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.page-module__3j-8fq__link:hover {
+  color: #fff;
+  background: #3b82f6;
+}
+
+.page-module__3j-8fq__scrollIcon {
+  cursor: pointer;
+  color: #fff;
+  opacity: .7;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14em;
+  margin-left: -6em;
+  transition: all .3s;
+  animation: 2s infinite page-module__3j-8fq__bounce;
+  display: flex;
+}
+
+.page-module__3j-8fq__scrollIcon:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+.page-module__3j-8fq__mouseIcon {
+  width: 24px;
+  height: 40px;
+}
+
+.page-module__3j-8fq__arrowIcon {
+  width: 20px;
+  height: 12px;
+}
+
+.page-module__3j-8fq__wheelAnimation {
+  animation: 2s infinite page-module__3j-8fq__scroll;
+}
+
+@keyframes page-module__3j-8fq__scroll {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@keyframes page-module__3j-8fq__bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-5px);
+  }
+
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+@media (width <= 768px) {
+  .page-module__3j-8fq__scrollIcon {
+    margin-top: 2rem;
+  }
+
+  .page-module__3j-8fq__mouseIcon {
+    width: 20px;
+    height: 32px;
+  }
+
+  .page-module__3j-8fq__arrowIcon {
+    width: 16px;
+    height: 10px;
+  }
+}
+
+@media (width <= 594px) {
+  .page-module__3j-8fq__scrollIcon {
+    cursor: pointer;
+    color: #fff;
+    opacity: .7;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 3em;
+    margin-left: 0;
+    transition: all .3s;
+    animation: 2s infinite page-module__3j-8fq__bounce;
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=src_app_styles_page_module_css_f9ee138c._.single.css.map*/
