@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./styles/globals.css";
 import JsonLd from "@/components/JsonLd";
+// Import the SmoothScroll component we just created
+import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
   // Basic SEO
@@ -80,27 +82,6 @@ export const metadata: Metadata = {
     images: ["next-portfolio-vert-seven.vercel.app/favicon.png"],
   },
 
-  // Icons and favicons - comment out until you add the actual files
-  // icons: {
-  //   icon: [
-  //     { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-  //     { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-  //   ],
-  //   apple: [
-  //     { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-  //   ],
-  //   other: [
-  //     {
-  //       rel: "mask-icon",
-  //       url: "/safari-pinned-tab.svg",
-  //       color: "#000000",
-  //     },
-  //   ],
-  // },
-
-  // Manifest for PWA - comment out until you create the file
-  // manifest: "/site.webmanifest",
-
   // Theme colors
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
@@ -176,8 +157,12 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
       </head>
       <body>
+        {/* Add JSON-LD structured data */}
         <JsonLd />
-        {children}
+
+        {/* Wrap all children with SmoothScroll component */}
+        {/* This enables Lenis smooth scrolling for the entire app */}
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );

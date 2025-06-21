@@ -5,44 +5,42 @@
   box-sizing: border-box;
 }
 
-/* Add this to your globals.css or page.module.css */
+/* IMPORTANT: Remove native smooth scrolling to let Lenis handle it */
 html {
-  scroll-behavior: smooth;
+  /* Remove scroll-behavior: smooth as Lenis will handle this */
   scroll-padding-top: 0;
+  /* Remove scroll-snap-type as Lenis provides better control */
 }
 
-/* For webkit browsers (Chrome, Safari, Edge) */
-html {
-  scroll-snap-type: y proximity; /* Optional: adds snap points */
-}
-
-/* Custom smooth scrolling with CSS transforms */
+/* Remove all native smooth scrolling behaviors */
 * {
-  scroll-behavior: smooth;
+  /* Let Lenis handle smooth scrolling instead */
+  scroll-behavior: auto;
 }
 
-/* Alternative approach using CSS scroll-timeline (newer browsers) */
+/* Remove conflicting scroll timeline animations */
+/* These can interfere with Lenis smooth scrolling */
 @supports (scroll-timeline: works) {
   html {
-    scroll-timeline: --page-scroll block;
-    animation: smooth-scroll linear both;
-    animation-timeline: --page-scroll;
+    /* Disable native scroll timeline */
+    scroll-timeline: none;
+    animation: none;
   }
 }
 
-@keyframes smooth-scroll {
-  to {
-    scroll-behavior: smooth;
-  }
-}
-
-/* For better performance on older devices */
+/* Keep reduced motion preference for accessibility */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
+
+  /* Disable Lenis on reduced motion preference */
+  * {
+    scroll-behavior: auto !important;
+  }
 }
 
+/* Font face declarations */
 @font-face {
   font-family: "ArticulatCFNormal";
   src: url("./fonts/ArticulatCFNormal.ttf") format("truetype");
@@ -59,8 +57,10 @@ html {
 
 /* White border frame around the entire website */
 html {
-  border: 8px solid white;
+  /* border: 8px solid white; */
   min-height: 100vh;
+  /* Ensure no scrollbar conflicts with Lenis */
+  overflow-x: hidden;
 }
 
 /* Base styles for the body element */
@@ -70,19 +70,19 @@ body {
   /* Set a comfortable line height for better readability */
   line-height: 1.6;
 
-  /* Add smooth scrolling behavior for better user experience */
-  scroll-behavior: smooth;
+  /* IMPORTANT: Remove scroll-behavior as Lenis handles this */
+  /* scroll-behavior: smooth; <- REMOVED */
 
-  /* Set a light background color */
-  background-color: #010101;
+  /* Set a dark background color */
+  background-color: #f1f1f1;
 
-  /* Set text color to a dark gray for better contrast */
-  color: #f1f1f1;
+  /* Set text color to light gray for better contrast */
+  color: #1a1a1a;
 
   /* Add minimum height to ensure footer stays at bottom */
   min-height: calc(100vh - 16px); /* Subtract border width */
 
-  /* Prevent horizontal scrolling */
+  /* Prevent horizontal scrolling - important for Lenis */
   overflow-x: hidden;
 
   /* Enable hardware acceleration for smoother animations */
@@ -95,6 +95,7 @@ body {
   /* Center the content horizontally */
   margin: 0;
 
+  /* Beautiful gradient background */
   background-image: radial-gradient(
       ellipse 400px 300px at 75% 80%,
       #62e19f 0%,
@@ -115,11 +116,12 @@ body {
       #62e19f 0%,
       transparent 100%
     );
+  /* Fixed attachment works well with Lenis */
   background-attachment: fixed;
 }
 
 /* Optional: Enhance the main title */
-.main {
+/* .main {
   font-size: 2.5rem;
   font-weight: bold;
   text-align: center;
@@ -129,9 +131,9 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 2rem;
-}
+} */
 
-/* Style the lorem sections */
+/* Style the lorem sections
 .lorem {
   padding: 2rem;
   margin: 1rem 0;
@@ -143,41 +145,9 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+ */
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  html {
-    border: 6px solid white; /* Smaller border on mobile */
-  }
-
-  body {
-    min-height: calc(100vh - 12px); /* Adjust for smaller border */
-    padding: 0.5rem;
-  }
-
-  .main {
-    font-size: 2rem;
-    padding: 1rem;
-  }
-
-  .lorem {
-    padding: 1.5rem;
-    margin: 0.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  html {
-    border: 4px solid white; /* Even smaller border on very small screens */
-  }
-
-  body {
-    min-height: calc(100vh - 8px); /* Adjust for smaller border */
-    padding: 0.25rem;
-  }
-}
-
-/* Custom scrollbar styling */
+/* Custom scrollbar styling - Lenis works with custom scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -194,17 +164,41 @@ body {
   background: linear-gradient(135deg, #000, #020202);
 }
 
+/* Selection colors */
 ::selection {
-  background: #62e19f;
-  color: #5660ee;
+  background: #1a1a1a;
+  color: #f1f1f1;
 }
 
 ::-moz-selection {
-  background: #62e19f;
-  color: #5660ee;
+  background: #1a1a1a;
+  color: #f1f1f1;
 }
 
+/* Link styles */
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* IMPORTANT: Lenis optimization styles */
+/* These help Lenis perform better */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }

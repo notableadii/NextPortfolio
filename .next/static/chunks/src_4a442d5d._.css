@@ -1,13 +1,13 @@
 /* [project]/src/app/styles/page.module.css [app-client] (css) */
 .page-module__3j-8fq__main {
-  color: #333;
+  color: #1a1a1a;
   height: 2em;
   margin-top: 5em;
   font-size: 3em;
 }
 
 .page-module__3j-8fq__lorem {
-  color: #f1f1f1;
+  color: #1a1a1a;
   max-width: 1250px;
   font-size: 2.3em;
   line-height: 1.5;
@@ -19,14 +19,14 @@
 
 @media (width <= 1600px) {
   .page-module__3j-8fq__main {
-    color: #f1f1f1;
+    color: #1a1a1a;
     height: 2em;
     margin-top: 4em;
     font-size: 3em;
   }
 
   .page-module__3j-8fq__lorem {
-    color: #f1f1f1;
+    color: #1a1a1a;
     max-width: 1250px;
     font-size: 2.3em;
     line-height: 1.5;
@@ -39,14 +39,14 @@
 
 @media (width <= 1414px) {
   .page-module__3j-8fq__main {
-    color: #f1f1f1;
+    color: #1a1a1a;
     height: 2em;
     margin-top: 4em;
     font-size: 3em;
   }
 
   .page-module__3j-8fq__lorem {
-    color: #f1f1f1;
+    color: #1a1a1a;
     max-width: 1250px;
     font-size: 2.3em;
     line-height: 1.5;
@@ -59,14 +59,14 @@
 
 @media (width <= 1300px) {
   .page-module__3j-8fq__main {
-    color: #f1f1f1;
+    color: #1a1a1a;
     height: 2em;
     margin-top: 4em;
     font-size: 2.5em;
   }
 
   .page-module__3j-8fq__lorem {
-    color: #f1f1f1;
+    color: #1a1a1a;
     max-width: 1250px;
     font-size: 1.8em;
     line-height: 1.5;
@@ -79,14 +79,14 @@
 
 @media (width <= 1046px) {
   .page-module__3j-8fq__main {
-    color: #f1f1f1;
+    color: #1a1a1a;
     height: 2em;
     margin-top: 3em;
     font-size: 2.5em;
   }
 
   .page-module__3j-8fq__lorem {
-    color: #f1f1f1;
+    color: #1a1a1a;
     max-width: 1250px;
     font-size: 1.8em;
     line-height: 1.5;
@@ -99,14 +99,14 @@
 
 @media (width <= 712px) {
   .page-module__3j-8fq__main {
-    color: #f1f1f1;
+    color: #1a1a1a;
     height: 2em;
     margin-top: 3em;
     font-size: 2.5em;
   }
 
   .page-module__3j-8fq__lorem {
-    color: #f1f1f1;
+    color: #1a1a1a;
     max-width: 1250px;
     font-size: 1.8em;
     line-height: 1.5;
@@ -119,14 +119,14 @@
 
 @media (width <= 594px) {
   .page-module__3j-8fq__main {
-    color: #f1f1f1;
+    color: #1a1a1a;
     height: 2em;
     margin-top: 6em;
     font-size: 2em;
   }
 
   .page-module__3j-8fq__lorem {
-    color: #f1f1f1;
+    color: #1a1a1a;
     max-width: 1250px;
     font-size: 1.5em;
     line-height: 1.5;
@@ -141,7 +141,7 @@
 @media (width <= 450px) {
   .page-module__3j-8fq__main {
     text-align: center;
-    color: #f1f1f1;
+    color: #1a1a1a;
     height: 2em;
     margin-top: 5em;
     font-size: 1.9em;
@@ -149,7 +149,7 @@
   }
 
   .page-module__3j-8fq__lorem {
-    color: #f1f1f1;
+    color: #1a1a1a;
     max-width: 2000px;
     font-size: 1.2em;
     line-height: 1.5;
@@ -163,7 +163,7 @@
 
 @media (width <= 300px) {
   .page-module__3j-8fq__main {
-    color: #f1f1f1;
+    color: #1a1a1a;
     height: 2em;
     margin-top: 6em;
     font-size: 1.9em;
@@ -171,7 +171,7 @@
   }
 
   .page-module__3j-8fq__lorem {
-    color: #f1f1f1;
+    color: #1a1a1a;
     max-width: 1250px;
     font-size: 1vw;
     line-height: 1.5;
@@ -184,7 +184,7 @@
 }
 
 .page-module__3j-8fq__gradient_text {
-  background: linear-gradient(90deg, #62e19f, #62e19f, #62e19f, #62e19f) 0 0 / 300% 100%;
+  background: linear-gradient(90deg, #1a1a1a, #1a1a1a, #1a1a1a, #1a1a1a) 0 0 / 300% 100%;
   color: #0000;
   -webkit-text-fill-color: transparent;
   text-align: center;
@@ -434,13 +434,13 @@
 }
 
 .Navigation-module__eB08ka__logo {
-  color: #fff;
+  color: #1a1a1a;
   font-size: 2rem;
   transition: color .3s;
 }
 
 .Navigation-module__eB08ka__logo:hover {
-  color: #62e19f;
+  color: #1a1a1a;
 }
 
 .Navigation-module__eB08ka__logo a {
@@ -457,7 +457,7 @@
 }
 
 .Navigation-module__eB08ka__navLink {
-  color: #fff;
+  color: #1a1a1a;
   padding: .5rem 0;
   font-size: 2rem;
   font-weight: 400;
@@ -468,7 +468,7 @@
 
 .Navigation-module__eB08ka__navLink:after {
   content: "";
-  background: #fff;
+  background: #1a1a1a;
   width: 0;
   height: 1px;
   transition: width .3s;
@@ -482,7 +482,7 @@
 }
 
 .Navigation-module__eB08ka__navLink:hover {
-  color: #62e19f;
+  color: #1a1a1a;
 }
 
 @media (width <= 768px) {

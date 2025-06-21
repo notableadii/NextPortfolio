@@ -1,5 +1,5 @@
 "use client"; // This is a client component which means it can use hooks and state
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./styles/page.module.css";
 import Link from "next/link";
@@ -14,31 +14,59 @@ export default function Home() {
     setIsLoading(false);
   };
 
+  // Updated scroll function to work with Lenis
   const scrollDown = () => {
-    window.scrollBy({
-      top: window.innerHeight,
-      behavior: "smooth",
+    // Get the current scroll position
+    const currentScroll = window.scrollY;
+    // Calculate the target scroll position (one viewport height down)
+    const targetScroll = currentScroll + window.innerHeight;
+
+    // Scroll to the target position
+    // Lenis will automatically make this smooth
+    window.scrollTo({
+      top: targetScroll,
+      behavior: "smooth", // Lenis will override this with its own smooth behavior
     });
+  };
+
+  // Alternative method using Lenis directly (if you want more control)
+  const scrollDownWithLenis = () => {
+    // Access the global Lenis instance (if you exposed it)
+    // @ts-ignore - accessing custom property
+    if (window.lenis) {
+      // @ts-ignore
+      window.lenis.scrollTo(window.scrollY + window.innerHeight);
+    } else {
+      // Fallback to regular scroll
+      scrollDown();
+    }
   };
 
   return (
     <>
+      {/* Show loading screen while loading */}
       {isLoading && (
         <MultilingualLoader onLoadingComplete={handleLoadingComplete} />
       )}
+
+      {/* Navigation component */}
       <Navigation />
+
+      {/* Main content container */}
       <div className={styles.container_main}>
+        {/* Main heading with gradient text effect */}
         <div className={`${styles.main} ${styles.gradient_text}`}>
           Hey, I'm Aditya Shah
         </div>
+        {/* Description text */}
         <div className={styles.lorem}>
           I'm just a hobby front-end web developer making this website to learn
           new things and have fun with web development. I love to create new
           things and explore new technologies.
         </div>
-
-        {/* Scroll Down Icon */}
+        {/* Scroll Down Icon - Updated to work with Lenis */}
         <div className={styles.scrollIcon} onClick={scrollDown}>
+          {/* Mouse icon with scroll wheel animation */}
           <svg
             width="24"
             height="40"
@@ -59,7 +87,7 @@ export default function Home() {
               strokeWidth="2"
               fill="none"
             />
-            {/* Scroll wheel */}
+            {/* Scroll wheel with animation */}
             <rect
               x="11"
               y="8"
@@ -71,7 +99,7 @@ export default function Home() {
             />
           </svg>
 
-          {/* Down arrow */}
+          {/* Down arrow icon */}
           <svg
             width="20"
             height="12"
@@ -91,7 +119,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Tech Stack Section */}
+      {/* Tech Stack Section - This will be smoothly scrolled to */}
       <TechStack />
     </>
   );

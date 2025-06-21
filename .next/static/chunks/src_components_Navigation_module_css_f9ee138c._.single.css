@@ -22,13 +22,13 @@
 }
 
 .Navigation-module__eB08ka__logo {
-  color: #fff;
+  color: #1a1a1a;
   font-size: 2rem;
   transition: color .3s;
 }
 
 .Navigation-module__eB08ka__logo:hover {
-  color: #62e19f;
+  color: #1a1a1a;
 }
 
 .Navigation-module__eB08ka__logo a {
@@ -45,7 +45,7 @@
 }
 
 .Navigation-module__eB08ka__navLink {
-  color: #fff;
+  color: #1a1a1a;
   padding: .5rem 0;
   font-size: 2rem;
   font-weight: 400;
@@ -56,7 +56,7 @@
 
 .Navigation-module__eB08ka__navLink:after {
   content: "";
-  background: #fff;
+  background: #1a1a1a;
   width: 0;
   height: 1px;
   transition: width .3s;
@@ -70,7 +70,7 @@
 }
 
 .Navigation-module__eB08ka__navLink:hover {
-  color: #62e19f;
+  color: #1a1a1a;
 }
 
 @media (width <= 768px) {
