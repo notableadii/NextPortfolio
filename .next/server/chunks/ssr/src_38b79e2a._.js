@@ -273,7 +273,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$styles$2f$page
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$MultilingualLoader$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/MultilingualLoader.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Navigation$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/Navigation.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TechStack$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/TechStack.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/gsap/index.js [app-ssr] (ecmascript) <locals>");
 "use client"; // This is a client component which means it can use hooks and state
+;
 ;
 ;
 ;
@@ -282,31 +284,163 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TechSta
 ;
 function Home() {
     const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
+    // Create refs for all animated elements
+    const mainTextRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const descriptionRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const scrollIconRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const containerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    // Track if animations have been initialized
+    const animationsInitialized = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(false);
     const handleLoadingComplete = ()=>{
         setIsLoading(false);
     };
-    // Updated scroll function to work with Lenis
+    // Initialize GSAP animations when loading completes
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if (!isLoading && !animationsInitialized.current) {
+            initializeAnimations();
+            animationsInitialized.current = true;
+        }
+    }, [
+        isLoading
+    ]);
+    const initializeAnimations = ()=>{
+        // Set initial states - elements start below and invisible
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["gsap"].set([
+            mainTextRef.current,
+            descriptionRef.current,
+            scrollIconRef.current
+        ], {
+            opacity: 0,
+            y: 80,
+            scale: 0.95,
+            filter: "blur(8px)"
+        });
+        // Create the main timeline for sequential animations
+        const mainTimeline = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["gsap"].timeline({
+            delay: 0.3,
+            ease: "power3.out"
+        });
+        // Animate main heading - the hero moment
+        mainTimeline.to(mainTextRef.current, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            filter: "blur(0px)",
+            duration: 1.4,
+            ease: "power4.out",
+            // Add a subtle bounce at the end
+            onComplete: ()=>{
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["gsap"].to(mainTextRef.current, {
+                    scale: 1.02,
+                    duration: 0.15,
+                    yoyo: true,
+                    repeat: 1,
+                    ease: "power2.inOut"
+                });
+            }
+        })// Animate description text - smoother, softer entrance
+        .to(descriptionRef.current, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            filter: "blur(0px)",
+            duration: 1.2,
+            ease: "power3.out"
+        }, "-=0.8") // Start 0.8 seconds before previous animation ends
+        // Animate scroll icon - bouncy, playful entrance
+        .to(scrollIconRef.current, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            filter: "blur(0px)",
+            duration: 1,
+            ease: "back.out(1.4)"
+        }, "-=0.6")// Add a subtle floating animation to the scroll icon
+        .to(scrollIconRef.current, {
+            y: -8,
+            duration: 2,
+            ease: "power2.inOut",
+            yoyo: true,
+            repeat: -1
+        });
+        // Add hover animations for interactive elements
+        setupHoverAnimations();
+    };
+    const setupHoverAnimations = ()=>{
+        // Main text hover effect
+        if (mainTextRef.current) {
+            const mainText = mainTextRef.current;
+            mainText.addEventListener("mouseenter", ()=>{
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["gsap"].to(mainText, {
+                    scale: 1.05,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+            mainText.addEventListener("mouseleave", ()=>{
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["gsap"].to(mainText, {
+                    scale: 1,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+        }
+        // Scroll icon hover effect
+        if (scrollIconRef.current) {
+            const scrollIcon = scrollIconRef.current;
+            scrollIcon.addEventListener("mouseenter", ()=>{
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["gsap"].to(scrollIcon, {
+                    scale: 1.2,
+                    rotation: 5,
+                    duration: 0.3,
+                    ease: "back.out(1.7)"
+                });
+            });
+            scrollIcon.addEventListener("mouseleave", ()=>{
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["gsap"].to(scrollIcon, {
+                    scale: 1,
+                    rotation: 0,
+                    duration: 0.3,
+                    ease: "back.out(1.7)"
+                });
+            });
+        }
+    };
+    // Enhanced scroll function with GSAP smooth scrolling
     const scrollDown = ()=>{
-        // Get the current scroll position
         const currentScroll = window.scrollY;
-        // Calculate the target scroll position (one viewport height down)
         const targetScroll = currentScroll + window.innerHeight;
-        // Scroll to the target position
-        // Lenis will automatically make this smooth
-        window.scrollTo({
-            top: targetScroll,
-            behavior: "smooth"
+        // Create a smooth scroll animation with GSAP
+        __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["gsap"].to(window, {
+            scrollTo: {
+                y: targetScroll,
+                autoKill: false
+            },
+            duration: 1.8,
+            ease: "power3.inOut",
+            onStart: ()=>{
+                // Add a subtle scale effect to the scroll icon when clicked
+                __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$gsap$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["gsap"].to(scrollIconRef.current, {
+                    scale: 0.8,
+                    duration: 0.1,
+                    yoyo: true,
+                    repeat: 1,
+                    ease: "power2.inOut"
+                });
+            }
         });
     };
-    // Alternative method using Lenis directly (if you want more control)
+    // Alternative method using Lenis directly (if you want to use Lenis instead)
     const scrollDownWithLenis = ()=>{
-        // Access the global Lenis instance (if you exposed it)
         // @ts-ignore - accessing custom property
         if (window.lenis) {
             // @ts-ignore
-            window.lenis.scrollTo(window.scrollY + window.innerHeight);
+            window.lenis.scrollTo(window.scrollY + window.innerHeight, {
+                duration: 1.8,
+                easing: (t)=>Math.min(1, 1.001 - Math.pow(2, -10 * t))
+            });
         } else {
-            // Fallback to regular scroll
+            // Fallback to GSAP scroll
             scrollDown();
         }
     };
@@ -316,117 +450,52 @@ function Home() {
                 onLoadingComplete: handleLoadingComplete
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 49,
+                lineNumber: 203,
                 columnNumber: 9
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Navigation$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 53,
+                lineNumber: 207,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                ref: containerRef,
                 className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$styles$2f$page$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].container_main,
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        ref: mainTextRef,
                         className: `${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$styles$2f$page$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].main} ${__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$styles$2f$page$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].gradient_text}`,
+                        style: {
+                            cursor: "default",
+                            userSelect: "none"
+                        },
                         children: "Hey, I'm Aditya Shah"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 58,
+                        lineNumber: 212,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        ref: descriptionRef,
                         className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$styles$2f$page$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].lorem,
+                        style: {
+                            userSelect: "none"
+                        },
                         children: "I'm just a hobby front-end web developer making this website to learn new things and have fun with web development. I love to create new things and explore new technologies."
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 62,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$styles$2f$page$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].scrollIcon,
-                        onClick: scrollDown,
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                width: "24",
-                                height: "40",
-                                viewBox: "0 0 24 40",
-                                fill: "none",
-                                xmlns: "http://www.w3.org/2000/svg",
-                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$styles$2f$page$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].mouseIcon,
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                                        x: "2",
-                                        y: "2",
-                                        width: "20",
-                                        height: "36",
-                                        rx: "10",
-                                        ry: "10",
-                                        stroke: "currentColor",
-                                        strokeWidth: "2",
-                                        fill: "none"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 79,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                                        x: "11",
-                                        y: "8",
-                                        width: "2",
-                                        height: "8",
-                                        rx: "1",
-                                        fill: "currentColor",
-                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$styles$2f$page$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].wheelAnimation
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/page.tsx",
-                                        lineNumber: 91,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 70,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                width: "20",
-                                height: "12",
-                                viewBox: "0 0 20 12",
-                                fill: "none",
-                                xmlns: "http://www.w3.org/2000/svg",
-                                className: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$app$2f$styles$2f$page$2e$module$2e$css__$5b$app$2d$ssr$5d$__$28$css__module$29$__["default"].arrowIcon,
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                    d: "M2 2L10 10L18 2",
-                                    stroke: "currentColor",
-                                    strokeWidth: "2",
-                                    strokeLinecap: "round",
-                                    strokeLinejoin: "round"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/page.tsx",
-                                    lineNumber: 111,
-                                    columnNumber: 13
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 103,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 68,
+                        lineNumber: 224,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 56,
+                lineNumber: 210,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$TechStack$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 123,
+                lineNumber: 238,
                 columnNumber: 7
             }, this)
         ]
